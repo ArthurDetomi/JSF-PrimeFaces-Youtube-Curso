@@ -24,9 +24,9 @@
 	<h1>Lista de Pessoas</h1>
 	
 	<p:dataTable id="tabelaPessoa" value="#{bean.pessoas}" var="p" border="1">
-		<p:column>#{p.nome}</p:column>
-		<p:column>#{p.email}</p:column>
-		<p:column>
+		<p:column headerText="Nome" >#{p.nome}</p:column>
+		<p:column headerText="Email" >#{p.email}</p:column>
+		<p:column headerText="Editar">
 			<p:button value="Editar" outcome="/paginas/Sucesso.xhtml?parametro=#{p.nome}"/>
 		</p:column>
 	</p:dataTable>
