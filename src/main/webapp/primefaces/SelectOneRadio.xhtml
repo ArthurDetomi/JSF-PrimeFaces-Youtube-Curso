@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet library="css" name="file.css" />
+	<title>Select One Radio</title>
+</h:head>
+<h:body>
+
+	<header>
+
+		<div>
+			<h1>Treinamento JSF e PrimeFaces</h1>
+		</div>
+		<div>
+			<h:graphicImage library="imagens" name="logo.jpeg" width="100" />
+		</div>
+
+	</header>
+	<!--  sempre que ocorre uma atualização na página mostra uma mensagem -->
+	<p:messages autoUpdate="true" id="msg" />
+
+	<h2>Select One Radio</h2>
+
+	<h:form id="form">
+
+		<p:panelGrid columns="2">
+			<p:selectOneRadio value="#{clienteMB.tipoPessoa}">
+				<f:selectItem itemLabel="Fisica" itemValue="FISICA" />
+				<f:selectItem itemLabel="Jurídica" itemValue="JURIDICA" />
+				<p:ajax event="click" update="input" process="@this" />
+			</p:selectOneRadio>
+
+			<h:panelGroup id="input">
+				<p:inputMask id="cpf" mask="999.999.999-99" value="CPF"
+					rendered="#{clienteMB.tipoPessoa eq 'FISICA'}" required="true" />
+
+				<p:inputMask id="cnpj" mask="999.999.999-9/9999-99" value="CNPJ"
+					rendered="#{clienteMB.tipoPessoa eq 'JURIDICA'}" required="true" />
+			</h:panelGroup>
+
+		</p:panelGrid>
+
+	</h:form>
+
+</h:body>
+</html>
