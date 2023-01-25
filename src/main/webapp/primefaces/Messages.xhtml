@@ -27,10 +27,10 @@
 
 	<h2>Messages</h2>
 
-	<p:messages  autoUpdate="true"  />
+	<p:growl  autoUpdate="true"  life="5000" />
 	
 	<h:form id="form">
-		<p:commandButton value="Mensagem" action="#{msg.erro}" />
+		<p:commandButton value="Mensagem" action="#{msg.salvar}" />
 	</h:form>
 
 </h:body>
