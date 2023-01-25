@@ -11,6 +11,8 @@ public class Atividade implements Serializable{
 	
 	private String nome;
 	
+	private TipoAtividade tipoAtividade;
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(id);
@@ -43,7 +45,13 @@ public class Atividade implements Serializable{
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
-	
-	
+
+	public TipoAtividade getTipoAtividade() {
+		return tipoAtividade;
+	}
+
+	public void setTipoAtividade(TipoAtividade tipoAtividade) {
+		this.tipoAtividade = tipoAtividade;
+	}
 	
 }

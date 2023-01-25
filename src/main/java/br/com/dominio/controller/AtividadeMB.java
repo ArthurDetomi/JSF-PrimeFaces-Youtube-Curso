@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.inject.Named;
 
 import br.com.dominio.model.Atividade;
+import br.com.dominio.model.TipoAtividade;
 
 @Named("atividadeMB")
 @SessionScoped
@@ -17,7 +18,9 @@ public class AtividadeMB implements Serializable{
 	@Inject
 	private Atividade atividade;
 	
-	
+	public TipoAtividade[] getAtividades() {
+		return TipoAtividade.values();
+	}
 
 	public Atividade getAtividade() {
 		return atividade;
