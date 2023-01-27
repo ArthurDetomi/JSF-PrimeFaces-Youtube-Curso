@@ -48,7 +48,7 @@ public class Medicamento implements Serializable, Base {
 	}
 
 	@Override
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
