@@ -33,7 +33,7 @@ public class MedicamentoMB implements Serializable {
 		medicamentos = service.todosOsMedicamentos();
 	}
 
-	public void adicionarMedicamento() {
+	public void adicionar() {
 		try {
 			service.salvar(medicamento);
 			medicamento = new Medicamento();
