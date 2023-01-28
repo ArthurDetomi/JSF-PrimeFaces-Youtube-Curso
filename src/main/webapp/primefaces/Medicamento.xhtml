@@ -56,6 +56,43 @@
 					style="margin-top:10px;" />
 
 			</p:panelGrid>
+
+			<p:dataTable id="tabela" value="#{medicamentoMB.medicamentos}"
+				var="m" paginator="true" rows="5">
+
+				<p:column headerText="Medicamento">
+					<p:outputLabel value="#{m.nome}" />
+				</p:column>
+				<p:column headerText="Apresentação">
+					<p:outputLabel value="#{m.apresentacao}" />
+				</p:column>
+				<p:column headerText="Laboratório">
+					<p:outputLabel value="#{m.laboratorio}" />
+				</p:column>
+				<p:column headerText="Registro MS">
+					<p:outputLabel value="#{m.registro}" />
+				</p:column>
+				<p:column headerText="Preço">
+					<p:outputLabel value="#{m.preco}">
+						<f:convertNumber type="currency" currencySymbol="R$" />
+					</p:outputLabel>
+				</p:column>
+
+				<p:column headerText="">
+					<p:commandButton icon="ui-icon-pencil" update="@form"
+						process="@this">
+						<f:setPropertyActionListener value="#{m}"
+							target="#{medicamentoMB.medicamento}" />
+					</p:commandButton>
+					<p:commandButton action="#{medicamentoMB.excluir}" icon="ui-icon-trash" update="tabela"
+						process="@this">
+						<f:setPropertyActionListener value="#{m}"
+							target="#{medicamentoMB.medicamento}" />
+					</p:commandButton>
+				</p:column>
+
+			</p:dataTable>
+
 		</h:form>
 	</ui:define>
 
